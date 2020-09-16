@@ -56,9 +56,7 @@ def storeDatas(data):
         sys.exit(1)
     
     
-    singer.write_state(
-        
-    )
+    singer.write_state(value={"last-id": "CVE-2020-7294"})
 
 
 if __name__ == "__main__":
