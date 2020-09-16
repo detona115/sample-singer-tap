@@ -15,8 +15,6 @@ WORKDIR /code
 RUN apt-get update
 RUN apt-get install build-essential nano
 
-RUN pip install pipenv && pipenv install --system
-
 RUN pip install singer-python && pip install singer-tools
 
 # importing source files
