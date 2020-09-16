@@ -12,6 +12,14 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /code
 
 # Install dependencies
+RUN apt-get update
 RUN apt-get install build-essential nano
 
 RUN pip install pipenv && pipenv install --system
+
+RUN pip install singer-python && pip install singer-tools
+
+# importing source files
+COPY * /code/
+
+CMD python -m main.py | singer-check-tap
